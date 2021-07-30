@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM alpine:3.12
-RUN apk update --no-cache && apk add ca-certificates
-COPY nfs-subdir-external-provisioner /nfs-subdir-external-provisioner
-ENTRYPOINT ["/nfs-subdir-external-provisioner"]
+#FROM alpine:3.12
+#RUN apk update --no-cache && apk add ca-certificates
+#COPY nfs-subdir-external-provisioner /nfs-subdir-external-provisioner
+#ENTRYPOINT ["/nfs-subdir-external-provisioner"]
+FROM k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+RUN ls
